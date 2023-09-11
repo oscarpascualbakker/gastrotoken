@@ -1,0 +1,23 @@
+{
+    "name": "GastroToken #12",
+    "description": "Patatas bravas",
+    "image": "https://gastrotoken.com/images/12.png",
+    "attributes": [
+        {
+            "trait_type": "Category",
+            "value": "Classic Tapas"
+        }
+    ],
+    "collection": {
+        "name": "GastroToken",
+        "image": "https://gastrotoken.com/images/gastrotoken.png"
+    },
+    "collectible": {
+        "name": "GastroToken",
+        "image": "https://gastrotoken.com/images/gastrotoken.png"
+    },
+    "contract": {
+        "name": "GastroToken",
+        "image": "https://gastrotoken.com/images/gastrotoken.png"
+    }
+}

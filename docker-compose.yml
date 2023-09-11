@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  ganache:
+    image: trufflesuite/ganache-cli
+    networks:
+      - GastroToken
+    ports:
+      - "8545:8545"
+    environment:
+      - GAS_LIMIT=10000000
+      - GAS_PRICE=200
+      - NETWORK_ID=5777
+      - MNEMONIC="candy maple cake sugar pudding cream honey rich smooth crumble sweet treat"
+      - VERBOSE=1
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: 4G
+
+  gastrotoken:
+    build: .
+    networks:
+      - GastroToken
+    volumes:
+      - .:/app
+    command: /bin/sh
+    depends_on:
+      - ganache
+
+  slither:
+    build:
+      context: .
+      dockerfile: Dockerfile.slither
+    networks:
+      - GastroToken
+    volumes:
+      - .:/slither
+
+networks:
+  GastroToken:
+    driver: bridge

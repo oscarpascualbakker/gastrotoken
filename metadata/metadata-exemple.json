@@ -1,0 +1,23 @@
+{
+    "name": "Gastro Token #{ID}",
+    "description": "Patatas bravas",
+    "image": "https://gastrotoken.com/images/{ID}.png",
+    "attributes": [
+        {
+            "trait_type": "Category",
+            "value": "Michelin Star"
+        }
+    ],
+    "collection" :{
+        "name": "Gastro Token",
+        "image": "https://gastrotoken.com/images/gastrotoken.png"
+    },
+	"collectible" :{
+        "name": "Gastro Token",
+        "image": "https://gastrotoken.com/images/gastrotoken.png"
+    },
+    "contract" :{
+        "name": "Gastro Token",
+        "image": "https://gastrotoken.com/images/gastrotoken.png"
+    }
+}
