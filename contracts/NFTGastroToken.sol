@@ -41,16 +41,22 @@ contract NFTGastroToken is ERC1155 {
 
 
     /**
-     * @notice Mints a specific NFT and assigns it to an address.
+     * @notice Mints a specific NFT and assigns it to an address. This function follows the "Checks-Effects-Interactions" pattern to prevent re-entrancy vulnerabilities.
      * @param _to The address that will receive the NFT.
      * @param _id The ID of the NFT to be minted.
+     *
+     * Function details:
+     * 0. Check: No prior checks are needed.
+     * 1. Effect: Increments the `totalTokensMinted` counter.
+     * 2. Effect: Emits a `GastroTokenMinted` event to log the action.
+     * 3. Interaction: Calls the `_mint` function to create the NFT and assign it to the `_to` address.
      */
     function mintGastroToken(address _to, uint256 _id) external onlySobresOrAdmin {
-        _mint(_to, _id, 1, "");
-
         totalTokensMinted++;
 
         emit GastroTokenMinted(_id);
+
+        _mint(_to, _id, 1, "");
     }
 
 
